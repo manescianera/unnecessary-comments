@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import createPersistedState from 'vuex-persistedstate'
-import _ from 'lodash'
+import { takeRight } from 'lodash'
 
 Vue.use(Vuex)
 
@@ -14,7 +14,7 @@ export default new Vuex.Store({
     	maxVisible: 4
   	},
 	getters: {
-		visibleComments: state => _.takeRight(state.comments, state.maxVisible),
+		visibleComments: state => takeRight(state.comments, state.maxVisible),
 		hiddenCommentsCount: state => 
 			state.comments.length > state.maxVisible 
 				? state.comments.length - state.maxVisible 
