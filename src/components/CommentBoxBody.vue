@@ -39,6 +39,8 @@ export default {
 	flex-direction: column;
 
 	overflow: auto;
+	// Works on ff only.
+	scrollbar-width: thin;
 }
 
 .list-fade-enter-active,
