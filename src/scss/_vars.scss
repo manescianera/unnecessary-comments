@@ -1,0 +1,23 @@
+// Colors
+
+$bg-outer: #ededed;
+$bg-inner: #fff;
+$bg-inner-lt: #f0efef;
+$bg-inner-dk: #f4f4f4;
+
+$dk: #3c3c3c;
+$md: #414141;
+$lt-1: #919191;
+$lt-2: #fff;
+
+$green: #00a71c;
+$gray: rgb(121, 136, 153);
+$red: rgb(242, 116, 116);
+
+// Fonts
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+$ft-primary: 'Open Sans', sans-serif;
+
+// Global font size
+$rem: calc(11px + 0.15vmax);
