@@ -36,15 +36,13 @@ import VInput from '@/components/VInput';
 import { mapActions } from 'vuex';
 import Comment from '@/constructors/Comment';
 import Author from '@/constructors/Author';
+import { scrollIntoView } from '@/helpers';
 
 export default {
 	name: 'CommentBoxFooter',
 	components: {
 		VButton,
 		VInput,
-	},
-	mounted() {
-		this.scrollToBottom();
 	},
 	data() {
 		return {
@@ -65,16 +63,7 @@ export default {
 
 			Object.assign(this.newComment, new Comment());
 
-			this.scrollToBottom();
-		},
-
-		scrollToBottom() {
-			const el = document.querySelector('.box-comment:last-child');
-			if (el) {
-				setTimeout(() => {
-					el.scrollIntoView();
-				}, 300);
-			}
+			scrollIntoView('.box-comment:last-child');
 		},
 	},
 };

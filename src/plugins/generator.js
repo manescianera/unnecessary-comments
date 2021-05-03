@@ -3,6 +3,7 @@ import { DateTime } from 'luxon'
 import store from '../store'
 import Comment from '../constructors/Comment'
 import Author from '../constructors/Author'
+import { scrollIntoView } from '../helpers/index.js'
 
 
 // API call to get random first and last names, generate picture for comment author.
@@ -54,6 +55,9 @@ const Generator = {
                     postedAt: DateTime.fromISO(new Date().toISOString()).toFormat('t'),
                     body: await getText(),
                 }))
+
+                // Scroll to the bottom only when 1 comment is generated (with the 'Generate' button).
+                if (n === 1) { scrollIntoView('.box-comment:last-child') }
 			}
 		}
     }

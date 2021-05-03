@@ -10,6 +10,7 @@ import { mapActions } from 'vuex';
 import Comment from '@/constructors/Comment';
 import Author from '@/constructors/Author';
 import axios from 'axios';
+import { scrollIntoView } from '@/helpers';
 
 export default {
 	name: 'App',
@@ -17,6 +18,7 @@ export default {
 		CommentBox,
 	},
 	mounted() {
+		scrollIntoView('.box-comment:last-child');
 		this.generateComments(10);
 	},
 	methods: {
