@@ -6,24 +6,35 @@
 
 <script>
 import CommentBox from './components/CommentBox.vue';
+import { mapActions } from 'vuex';
+import Comment from '@/constructors/Comment';
+import Author from '@/constructors/Author';
+import axios from 'axios';
 
 export default {
 	name: 'App',
 	components: {
 		CommentBox,
 	},
+	mounted() {
+		this.generateComments(10);
+	},
+	methods: {
+		...mapActions(['addComment']),
+	},
 };
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
 * {
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
 	text-decoration: none;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Open Sans', sans-serif;
+	font-size: $rem;
+	scroll-behavior: smooth;
+	font-smooth: antialiased;
 }
 
 :is(html, body) {
@@ -34,6 +45,6 @@ export default {
 body {
 	display: grid;
 	place-items: center;
-	background: #e1e1e1;
+	background: $bg-outer;
 }
 </style>
