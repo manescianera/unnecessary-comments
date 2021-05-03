@@ -109,7 +109,7 @@ export default {
 
 	&__text {
 		color: $dk;
-		overflow-wrap: break-word;
+		overflow-wrap: anywhere;
 		padding-block: 0.2rem;
 	}
 }
