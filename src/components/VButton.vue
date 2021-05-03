@@ -1,10 +1,8 @@
 <template>
 	<button v-if="onClick" class="btn" :type="type" @click="onClick">
-		<slot>button</slot>
+		{{ text }}
 	</button>
-	<button v-else class="btn" :type="type">
-		<slot>button</slot>
-	</button>
+	<button v-else class="btn" :type="type">{{ text }}</button>
 </template>
 
 <script>
@@ -13,11 +11,13 @@ export default {
 	props: {
 		onClick: {
 			type: Function,
-			required: false,
 		},
 		type: {
 			type: String,
 			default: 'button',
+		},
+		text: {
+			type: String,
 		},
 	},
 };

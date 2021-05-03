@@ -2,33 +2,29 @@
 	<div class="box-footer">
 		<form class="box-footer__form" @submit.prevent="addNewComment">
 			<VInput
-				:name="'name'"
+				name="name"
 				v-model="newComment.author.name"
 				:required="true"
-				:placeholder="'Your name'"
+				placeholder="Your name"
 			/>
 			<VInput
-				:name="'comment'"
+				name="comment"
 				v-model="newComment.body"
 				:required="true"
-				:placeholder="'Add a comment'"
+				placeholder="Add a comment"
 			/>
 			<div class="box-footer__buttons">
-				<VButton :type="'submit'" class="btn--green">
-					Post
-				</VButton>
-				<VButton :type="'reset'" class="btn--gray">
-					Cancel
-				</VButton>
+				<VButton class="btn--green" type="submit" text="Post" />
+				<VButton class="btn--gray" type="reset" text="Cancel" />
 				<VButton
 					class="btn--gray"
+					text="Generate"
 					:onClick="
 						() => {
 							return generateComments(1);
 						}
 					"
-					>Generate</VButton
-				>
+				/>
 			</div>
 		</form>
 	</div>

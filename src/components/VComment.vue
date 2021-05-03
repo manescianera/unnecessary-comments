@@ -14,14 +14,14 @@
 				}}</span>
 				<span class="box-comment__time">{{ comment.postedAt }}</span>
 				<VButton
+					class="btn--red btn--small"
 					:onClick="
 						() => {
 							return removeComment(comment);
 						}
 					"
-					class="btn--red btn--small"
-					>Delete</VButton
-				>
+					text="Delete"
+				/>
 			</div>
 			<div class="box-comment__body">
 				<p class="box-comment__text">{{ comment.body }}</p>
